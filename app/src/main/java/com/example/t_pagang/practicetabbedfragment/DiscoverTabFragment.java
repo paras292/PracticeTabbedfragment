@@ -19,19 +19,15 @@ public class DiscoverTabFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.discover_tab_fragment,container,false);
-
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         ArrayList<Model> list= new ArrayList<>();
-
-
-        for(int i = 0;i<100;i++)
-            list.add(new Model(Model.IMAGE_TYPE,"Image-View- "+i,R.drawable.snow));
-
-
+        for(int i = 0;i<100;i++) {
+            list.add(new Model(Model.IMAGE_TYPE,"Team Meeting","We have 5 new Cards generated for you",R.drawable.ic_event_black_24dp,R.drawable.rabbit,R.drawable.nature,R.drawable.snow));
+        }
         MultiViewTypeAdapter adapter = new MultiViewTypeAdapter(list,getContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), OrientationHelper.VERTICAL, false);
         RecyclerView mRecyclerView = (RecyclerView)getView().findViewById(R.id.recyclerView);

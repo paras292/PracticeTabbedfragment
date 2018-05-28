@@ -22,14 +22,22 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
     public static class ImageTypeViewHolder extends RecyclerView.ViewHolder {
 
 
-        TextView txtType;
-        ImageView image;
+        TextView textViewTop;
+        TextView textViewMessage;
+        ImageView topIconImage;
+        ImageView midImage1;
+        ImageView midImage2;
+        ImageView midImage3;
 
         public ImageTypeViewHolder(View itemView) {
             super(itemView);
 
-            this.txtType = (TextView) itemView.findViewById(R.id.type);
-            this.image = (ImageView) itemView.findViewById(R.id.background);
+            this.textViewTop = (TextView) itemView.findViewById(R.id.textViewTop);
+            this.textViewMessage = (TextView) itemView.findViewById(R.id.textViewMessage);
+            this.midImage1 = (ImageView) itemView.findViewById(R.id.midImage1);
+            this.midImage2 = (ImageView) itemView.findViewById(R.id.midImage2);
+            this.midImage3 = (ImageView) itemView.findViewById(R.id.midImage3);
+            this.topIconImage= (ImageView) itemView.findViewById(R.id.topIconImage);
 
         }
 
@@ -73,8 +81,12 @@ public class MultiViewTypeAdapter extends RecyclerView.Adapter<RecyclerView.View
         if (object != null) {
             switch (object.type) {
                 case Model.IMAGE_TYPE:
-                    ((ImageTypeViewHolder) holder).txtType.setText(object.text);
-                    ((ImageTypeViewHolder) holder).image.setImageResource(object.data);
+                    ((ImageTypeViewHolder) holder).textViewTop.setText(object.textViewTop);
+                    ((ImageTypeViewHolder) holder).textViewMessage.setText(object.textViewMessage);
+                    ((ImageTypeViewHolder) holder).midImage1.setImageResource(object.midImage1);
+                    ((ImageTypeViewHolder) holder).midImage2.setImageResource(object.midImage2);
+                    ((ImageTypeViewHolder) holder).midImage3.setImageResource(object.midImage3);
+                    ((ImageTypeViewHolder) holder).topIconImage.setImageResource(object.topIconImage);
                     break;
             }
         }
